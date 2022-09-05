@@ -52,3 +52,14 @@ Finally, you can compile the project with `make`.
 `make TARGET=funkey` creates a FunKey build.  
 `make oclean` cleans up object files. Required before switching between linux and FunKey builds.  
 `./package.sh` combines several commands to create a ready-to-go OPK file for the FunKey.
+
+## Docker build
+First, build up a building container (it's enough to build it once):
+```shell
+docker build -t keycraft-build .
+```
+
+Then, use the container to build KeyCraft.opk locally:
+```shell
+docker run -v "$PWD":/app -w /app keycraft-build ./package.sh && rm *.o main.elf
+```

@@ -5,10 +5,10 @@ LDFLAGS     	= -lSDL -lSDL_image -lm -lSDL_mixer -lmikmod
 
 PNAME			= main.elf
 
-TINGYGL_LIB		= ~/Documents/Projects/FunKey/tinygl/lib/libTinyGL.a
+TINGYGL_LIB		= /opt/tinygl/src/libTinyGL.a
 
 SDL_INCLUDE		= -I/opt/funkey-sdk/arm-funkey-linux-musleabihf/sysroot/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
-TINYGL_INCLUDE	= -I/home/julius/Documents/Projects/FunKey/tinygl/include
+TINYGL_INCLUDE	= -I/opt/tinygl/include
 INCLUDES		= -I/opt/funkey-sdk/include $(SDL_INCLUDE) $(TINYGL_INCLUDE)
 
 ifdef TARGET
